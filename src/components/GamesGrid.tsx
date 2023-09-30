@@ -1,18 +1,19 @@
-import { Text } from "@chakra-ui/react";
+import { GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import useGame from "../hooks/useGame";
+import GameCard from "./GameCard";
 
 const GamesGrid = () => {
   const { games, error } = useGame();
 
   return (
-    <div>
+    <>
       {error && <Text>{error}</Text>}
-      <ul>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} padding={"10px"} spacing={10}>
         {games.map((item) => (
-          <li key={item.id}>{item.name}</li>
+          <GameCard key={item.id} game={item} />
         ))}
-      </ul>
-    </div>
+      </SimpleGrid>
+    </>
   );
 };
 

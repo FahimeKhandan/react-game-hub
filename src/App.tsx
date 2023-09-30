@@ -13,7 +13,7 @@ function App() {
       <GridItem area={"nav"}>
         <Navbar />
       </GridItem>
-      <GridItem area={"side"}>
+      <GridItem  area={"side"}>
         Side
       </GridItem>
       <GridItem area={"main"}>
