@@ -16,7 +16,7 @@ import { IconType } from "react-icons";
 const PlatformIcons = ({ platforms }: { platforms: Platform[] }) => {
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
-    playstation5: FaPlaystation,
+    playstation: FaPlaystation,
     xbox: FaXbox,
     nintendo: SiNintendo,
     mac: FaApple,
