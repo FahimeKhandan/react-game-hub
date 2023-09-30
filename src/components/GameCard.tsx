@@ -6,15 +6,15 @@ import getCroppedImageUrl from "../services/imageUrl";
 
 const GameCard = ({ game }: { game: GamesType }) => {
   return (
-    <Card overflow={"hidden"}>
+    <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <Heading fontSize={"2xl"}>{game.name}</Heading>
         <HStack justifyContent="space-between">
-            <PlatformIcons
-                platforms={game.parent_platforms.map(({ platform }) => platform)}
-            />
-            <CriticsScore score={game.metacritic}/>
+          <PlatformIcons
+            platforms={game.parent_platforms.map(({ platform }) => platform)}
+          />
+          <CriticsScore score={game.metacritic} />
         </HStack>
       </CardBody>
     </Card>
