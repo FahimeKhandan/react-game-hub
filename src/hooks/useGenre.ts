@@ -1,7 +1,7 @@
 
 import useData from "./useData";
 
-interface GenreType{
+export interface GenreType{
     id:number,
     name:string,
     slug: string,
