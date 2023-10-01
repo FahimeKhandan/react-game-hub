@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/apiClient";
-import { CanceledError } from "axios";
+
 import useData from "./useData";
 
 interface GenreType{
     id:number,
     name:string,
-    slug: string
+    slug: string,
+    image_background:string
 }
 
 const useGenre = () => useData<GenreType>('/genres')
