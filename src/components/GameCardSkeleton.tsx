@@ -9,9 +9,9 @@ import React from "react";
 
 const GameCardSkeleton = () => {
   return (
-    <Card minHeight={"300px"}>
+    <Card >
       <Heading>
-        <Skeleton />
+        <Skeleton height={"250px"}/>
       </Heading>
       <CardBody>
         <SkeletonText />
