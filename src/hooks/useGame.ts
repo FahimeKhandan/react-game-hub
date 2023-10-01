@@ -4,6 +4,7 @@ import { CanceledError } from "axios";
 import useData from "./useData";
 import { GenreType } from "./useGenre";
 import { PlatformsType } from "./usePlatforms";
+import { GameQuery } from "../App";
 
 export interface Platform {
   id: number;
@@ -26,14 +27,15 @@ export interface GamesType {
   playtime: number;
   suggestions_count: number;
   updated: string;
-  genres: GenreType[],
+  genres: GenreType[];
   parent_platforms: [{ platform: Platform }];
 }
 
-const useGame = (selectedGenre: GenreType | null, selectedPlatform: PlatformsType| null) =>
- useData<GamesType>(`/games`, 
- {params: {genres:selectedGenre?.id, platforms: selectedPlatform?.id}},
-  [selectedGenre?.slug, selectedPlatform?.id]
-  )
+const useGame = (gameQuery: GameQuery) =>
+  useData<GamesType>(
+    `/games`,
+    { params: { genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id } },
+    [gameQuery]
+  );
 
 export default useGame;
