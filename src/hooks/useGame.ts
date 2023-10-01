@@ -29,6 +29,6 @@ export interface GamesType {
   parent_platforms: [{ platform: Platform }];
 }
 
-const useGame = (selectedGenre: GenreType | null) => useData<GamesType>(`/games`, {params: {genres:selectedGenre?.id}}, selectedGenre)
+const useGame = (selectedGenre: GenreType | null) => useData<GamesType>(`/games`, {params: {genres:selectedGenre?.id}}, selectedGenre?.slug)
 
 export default useGame;
